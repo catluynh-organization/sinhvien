@@ -1,11 +1,8 @@
-server:
-  port: 9002
-
 resilience4j:
   retry:
     instances:
       basic:
        maxRetryAttemps: 5
-       waitDuration: 3s
+       waitDuration: 15s
 
 
