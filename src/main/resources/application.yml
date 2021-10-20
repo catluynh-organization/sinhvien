@@ -2,7 +2,21 @@ resilience4j:
   retry:
     instances:
       basic:
-       maxRetryAttemps: 5
-       waitDuration: 15s
+       maxRetryAttemps: 2
+       waitDuration: 3s
 
+      fallback:
+        maxRetryAttempts: 3
+        waitDuration: 2s
 
+      intervalFunctionExponential:
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+        maxRetryAttempts: 6
+        waitDuration: 1s
+
+      intervalFunctionRandom:
+        enableRandomizedWait: true
+        maxRetryAttempts: 3
+        randomizedWaitFactor: 0.5
+        waitDuration: 2s
