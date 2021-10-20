@@ -2,8 +2,8 @@ resilience4j:
   retry:
     instances:
       basic:
-       maxRetryAttemps: 2
-       waitDuration: 3s
+        maxRetryAttemps: 2
+        waitDuration: 3s
 
       fallback:
         maxRetryAttempts: 3
@@ -20,3 +20,30 @@ resilience4j:
         maxRetryAttempts: 3
         randomizedWaitFactor: 0.5
         waitDuration: 2s
+
+
+  ratelimiter:
+    instances:
+
+      basic:
+        limitForPeriod: 1
+        limitRefreshPeriod: 1s
+        timeoutDuration: 1s
+
+      timeout:
+        limitForPeriod: 1
+        limitRefreshPeriod: 1s
+        timeoutDuration: 250ms
+
+
+      multipleRateLimiters_rps_limiter:
+        limitForPeriod: 2
+        limitRefreshPeriod: 1s
+        timeoutDuration: 2s
+
+      multipleRateLimiters_rpm_limiter:
+        limitForPeriod: 40
+        limitRefreshPeriod: 1m
+        timeoutDuration: 2s
+
+
