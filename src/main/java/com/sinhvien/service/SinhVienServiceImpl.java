@@ -61,7 +61,7 @@ public class SinhVienServiceImpl implements SinhVienService {
 	}
 
 
-	@Retry(name = "basic")
+	@Retry(name = "intervalFunctionRandom")
 	@Override
 	public SinhVien_Khoa_VO findVoById(int id) {
 		// TODO Auto-generated method stub
