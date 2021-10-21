@@ -6,8 +6,6 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
-import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -62,7 +60,6 @@ public class SinhVienServiceImpl implements SinhVienService {
 	}
 
 
-	@RateLimiter(name = "basic")
 	@Override
 	public SinhVien_Khoa_VO findVoById(int id) {
 		// TODO Auto-generated method stub
